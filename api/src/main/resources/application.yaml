@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: local
+
+
+---
+server:
+  port: 8080
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot_toy?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: spring_boot_toy_admin
+    password: spring_boot_toy_pw1
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    devcrema:
+      debug
+    org:
+      hibernate: info
+      springframework:
+        security: info
